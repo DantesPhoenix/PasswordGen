@@ -1,0 +1,30 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+public class GUI {
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(GUI::createAndShowGUI);
+    }
+    private static void createAndShowGUI() {
+        JButton button = new JButton("Generate Password");
+        JLabel label = new JLabel("");
+        // Create a JPanel (container for components)
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(0, 1));
+        panel.setBorder(BorderFactory.createEmptyBorder(300, 300, 75, 300));
+        panel.add(button);
+        panel.add(label);
+        // Create a JFrame (window)
+        JFrame frame = new JFrame("Simple Java GUI");
+        // Add the panel to the frame
+        frame.add(panel, BorderLayout.CENTER);
+        // Define an action listener for the button
+        button.addActionListener(e -> label.setText("password"));
+        // Set the default close operation
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // Make the window visible
+        frame.setVisible(true);
+        frame.pack();
+    }
+}
