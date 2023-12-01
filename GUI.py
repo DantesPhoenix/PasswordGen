@@ -17,6 +17,7 @@ def generate_new_password():
 # Create the main window
 window = tk.Tk()
 window.title("Random Password Generator")
+window.geometry("500x250")
 
 # Create a label for the length input
 length_label = tk.Label(window, text="Password Length:")
